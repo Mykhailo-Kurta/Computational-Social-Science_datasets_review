@@ -7,15 +7,20 @@ import pandas as pd
 # CONFIGURATION
 # ============================================================
 
-BASE_DIR = Path(r"D:\Desktop\Computational Social Science\Hometask1")
+BASE_DIR = Path(__file__).resolve().parent
+DATA_DIR = BASE_DIR / "data"
+SITE_DIR = BASE_DIR / "site"
 
-CLIMATE_FILE = BASE_DIR / "aafc_aac_climat_2025.csv"
-NORMALS_FILE = BASE_DIR / "1991-2020_Canadian_Climate_Normals_CANADA_Data.csv"
-SELECTED_FILE = BASE_DIR / "selected_stations.csv"
-GEOJSON_FILE = BASE_DIR / "geoBoundaries-CAN-ADM1.geojson"
+CLIMATE_FILE = DATA_DIR / "aafc_aac_climat_2025.csv"
+NORMALS_FILE = DATA_DIR / "1991-2020_Canadian_Climate_Normals_CANADA_Data.csv"
+CITIES_FILE = DATA_DIR / "Biggest cities.xlsx"
+GEOJSON_FILE = DATA_DIR / "geoBoundaries-CAN-ADM1.geojson"
+SELECTED_FILE = DATA_DIR / "selected_stations.csv"
+VALIDATION_FILE = DATA_DIR / "station_validation.csv"
 
-OUTPUT_FILE = Path(__file__).parent / "data.json"
-CANADA_GEOJSON_FILE = Path(__file__).parent / "canada.geojson"
+OUTPUT_FILE = SITE_DIR / "data.json"
+
+
 
 MONTHS = [
     "Jan", "Feb", "Mar", "Apr", "May", "Jun",
